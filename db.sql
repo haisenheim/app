@@ -1,0 +1,1 @@
+create table presonnes(id int primary key auto_increment, nom varchar(60) default null, phone varchar(30) default null, dtn date default null, male tinyint(1) default 1);
