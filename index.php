@@ -7,14 +7,14 @@
             
             //On établit la connexion
             try{
-                $db = new PDO("mysql:host=localhost;dbname=tds4_db", $username, $password);
+                $db = new PDO("mysql:host=localhost;dbname=scam_db", $username, $password);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 //var_dump($conn);
                 // On récupère tout le contenu de la table recipes
-                $sql = 'SELECT * FROM etudiants';
+                $sql = 'SELECT * FROM operateurs limit 10';
                 $statement = $db->prepare($sql);
                 $statement->execute();
-                $etudiants = $statement->fetchAll();
+                $operateurs = $statement->fetchAll();
                
                // var_dump($etudiants);
             }
@@ -106,37 +106,39 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Liste DES ETUDIANTS</h3>
+                                <h3 class="card-title">Liste DES operateurs</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body table-responsive">
                                 
                             <table class="table table-bordered table-striped table-hover table-sm">
                                 <thead>
                                     <tr>
                                         <th>MATRICULE</th>
                                         <th>NOM</th>
-                                        <th>PRENOM</th>
                                         <th>TELEPHONE</th>
-                                        <th>ADRESSE</th>
+                                        <th>RESIDENCE</th>
+                                        <th>DTN</th>
+                                        <th>EXP CNI</th>
+                                        <th>ARRONDISSEMENT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($etudiants as $item): ?>
+                                    <?php foreach($operateurs as $item): ?>
                                         
                                         <tr>
-                                            <td><?= $item['matricule'] ?></td>
-                                            <td><?= $item['nom'] ?></td>
-                                            <td><?= $item['prenom'] ?></td>
+                                            <td><?= $item['identifiant'] ?></td>
+                                            <td><?= $item['name'] ?></td>
                                             <td><?= $item['phone'] ?></td>
-                                            <td><?= $item['adresse'] ?></td>
+                                            <td><?= $item['residence'] ?></td>
+                                            <td><?= $item['dtn'] ?></td>
+                                            <td><?= $item['expiration_cni'] ?></td>
+                                            <td><?= $item['arrondissement'] ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
                             </table>
                             </div>
-                            <div class="card-footer">
-                                TOTAL : <span><b><?= number_format(count($etudiants),0,',','.') ?></b></span>
-                         </div>
+                            
                         </div>
                     </div>
                     
