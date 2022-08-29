@@ -1,0 +1,19 @@
+div.main{
+    min-height: 60vh;
+    background-color: #CCC;
+}
+
+div.header{
+    min-height: 10vh;
+    background-color: #daf;
+}
+
+div.bottom{
+    min-height: 25vh;
+    background-color: #daf;
+}
+
+div.footer{
+    min-height: 5vh;
+    background-color: #ccc;
+}
