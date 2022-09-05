@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title>EAD INFO</title>
 </head>
 <body>
@@ -29,7 +29,13 @@
                     <a class="nav-link active" aria-current="page" href="/tdphp">ACCUEIL</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="apropos.php">A PROPOS</a>
+                    <a class="nav-link" href="personnes.php">PERSONNES</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/etudiants">ETUDIANTS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/filieres">FILIERES</a>
                     </li>
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

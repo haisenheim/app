@@ -1,13 +1,15 @@
 
     <?php include_once('includes/header.php'); ?>
+    
     <?php
+
             $servername = 'localhost';
             $username = 'root';
             $password = '';
             
             //On établit la connexion
             try{
-                $db = new PDO("mysql:host=localhost;dbname=personnes_db", $username, $password);
+                $db = new PDO("mysql:host=127.0.0.1;dbname=personnes_db", $username, $password);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 //var_dump($conn);
 
@@ -30,7 +32,9 @@
                        'dtn' => $personne['dtn'],
                        'male' => $personne['male'],
                    ]);
-   
+
+                   header('Location:/index.php'); //pour faire des redirection
+                  // exit();
                    //var_dump($personne);
                 }
 
@@ -43,7 +47,8 @@
                // var_dump($etudiants);
             }
             catch(Exception $e){
-                echo 'Erreur de connection a la base ;';
+                echo 'Erreur de connection a la base ;<br>';
+                echo 'Code Erreur : '.$e;
             }
             
            
